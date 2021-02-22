@@ -13,6 +13,6 @@ def simple_moving_average(ticker, span):
     try:
         historical_prices = rbh.crypto.get_crypto_historicals(ticker, 'day', 'year')
         close_prices = [float(price['close_price']) for price in historical_prices[-span:]]
-        return sum(close_prices) / span
+        return round(sum(close_prices) / span, 2)
     except Exception as e:
         raise SMAException(e.__str__())

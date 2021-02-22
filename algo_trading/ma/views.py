@@ -21,6 +21,6 @@ class SMAView(APIView):
     def get(self, request, ticker, span):
         return JsonResponse(
             {
-                f'sma-{ticker}-{span}': simple_moving_average(ticker, span)
+                f'sma-{ticker}-{span}': f'${simple_moving_average(ticker, span)}'
             }
         )

@@ -20,7 +20,7 @@ def simple_momentum(ticker, span, offset=0):
         momentum = \
             float(historical_prices[-(1 + offset)]['close_price']) \
             - float(historical_prices[-(span + offset)]['close_price'])
-        return momentum
+        return round(momentum, 2)
     except Exception as e:
         raise MTMException(e.__str__())
 

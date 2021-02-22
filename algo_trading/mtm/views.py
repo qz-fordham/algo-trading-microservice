@@ -21,6 +21,6 @@ class SimpleMomentumView(APIView):
     def get(self, request, ticker, span):
         return JsonResponse(
             {
-                f'mtm-{ticker}-{span}': simple_momentum(ticker, span, offset=0)
+                f'mtm-{ticker}-{span}': f'${simple_momentum(ticker, span, offset=0)}'
             }
         )
